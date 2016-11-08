@@ -1,0 +1,6 @@
+<?php
+
+define('DATABASE_HOTS',     'XXXX');
+define('DATABASE_NAME',     'XXXX');
+define('DATABASE_USER',     'XXXX');
+define('DATABASE_PASSWORD', 'XXXX');
