@@ -2,9 +2,11 @@
 
 namespace Addresses\Services;
 
+require realpath(dirname(__FILE__)) . '/../../../autoloader.php';
+
 use PDO;
 
-class DatabaseService implements DatabaseServiceInterface
+class PdoDatabaseService implements DatabaseServiceInterface
 {
     private static $connection;
 
@@ -22,7 +24,6 @@ class DatabaseService implements DatabaseServiceInterface
 
                 self::$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 self::$connection->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-
             } catch (PDOException $e) {
                 die($e->getMessage());
             }
@@ -37,8 +38,11 @@ class DatabaseService implements DatabaseServiceInterface
     /**
      * {@inheritdoc}
      */
-    public function select(array $fields)
+    public function selectWithEntity(array $fields, $id, $entity)
     {
+        $handler = self::$connection->query('SELECT ' . implode(',', $fields) . ' from ' . $this->table . ' where id = ' . $id);
+        $handler->setFetchMode(PDO::FETCH_CLASS, $entity);
+        return $handler->fetch();
     }
 
     /**

@@ -10,7 +10,7 @@ interface DatabaseServiceInterface
     /**
      * @param array $fields
      */
-    public function select(array $fields);
+    public function selectWithEntity(array $fields, $id, $entity);
 
     /**
      * @param array $data [field => value, ...]
