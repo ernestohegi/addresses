@@ -5,21 +5,21 @@ namespace Addresses\Services;
 class RouterService
 {
     const ROUTES = [
-        'GET home' => [
-            'controller' => 'HomeController',
-            'action' => 'Index'
+        'GET address' => [
+            'controller' => 'AddressController',
+            'action' => 'getAddress'
         ],
-        'POST home' => [
-            'controller' => 'HomeController',
-            'action' => 'Create'
+        'POST address' => [
+            'controller' => 'AddressController',
+            'action' => 'createAddress'
         ],
-        'PUT home' => [
-            'controller' => 'HomeController',
-            'action' => 'Update'
+        'PUT address' => [
+            'controller' => 'AddressController',
+            'action' => 'updateAddress'
         ],
-        'DELETE home' => [
-            'controller' => 'HomeController',
-            'action' => 'Delete'
+        'DELETE address' => [
+            'controller' => 'AddressController',
+            'action' => 'deleteAddress'
         ]
     ];
 
