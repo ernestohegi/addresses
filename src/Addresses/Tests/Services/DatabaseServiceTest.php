@@ -8,7 +8,7 @@ use Addresses\Services\DatabaseService;
 class DatabaseServiceTest extends TestCase
 {
     const DATABASE_HOST = '127.0.0.1';
-    const DATTABASE_NAME = 'addresses';
+    const DATTABASE_NAME = 'addresses_test';
     const DATABASE_USER = 'root';
     const DATABASE_PASSWORD = '1234';
 
@@ -31,6 +31,13 @@ class DatabaseServiceTest extends TestCase
 
     public function testCreate()
     {
+        $fields = [
+            'name' => 'Tester 1',
+            'telephone' => '123123',
+            'address' => 'Fake 123'
+        ];
 
+        $this->database->setTable('addresses');
+        $this->database->create($fields, []);
     }
 }

@@ -13,9 +13,6 @@ interface DatabaseServiceInterface
     public function select(array $fields);
 
     /**
-     * @param array $data
-     * @param string $code
-     * @param string $address
      * @return array
      */
     public function create(array $data);
@@ -33,4 +30,9 @@ interface DatabaseServiceInterface
      * @return bool
      */
     public function delete($id);
+
+    /**
+     * @param string $table
+     */
+    public function setTable($table);
 }
