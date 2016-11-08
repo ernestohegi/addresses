@@ -1,8 +1,8 @@
 <?php
 
-namespace Addresses\Vendor\Database;
+namespace Addresses\Services;
 
-class Database implements DatabaseInteface
+class Database implements DatabaseInterface
 {
     private $connection;
 

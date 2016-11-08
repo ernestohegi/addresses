@@ -1,8 +1,8 @@
 <?php
 
-namespace Addresses\Vendor\DatabaseInteface;
+namespace Addresses\Services;
 
-interface DatabaseInteface
+interface DatabaseInterface
 {
     /**
      * @param array $fields
