@@ -4,29 +4,17 @@ namespace Addresses\Services;
 
 class RouterService
 {
-    const ROUTES = [
-        'GET address' => [
-            'controller' => 'AddressController',
-            'action' => 'getAddress'
-        ],
-        'POST address' => [
-            'controller' => 'AddressController',
-            'action' => 'createAddress'
-        ],
-        'PUT address' => [
-            'controller' => 'AddressController',
-            'action' => 'updateAddress'
-        ],
-        'DELETE address' => [
-            'controller' => 'AddressController',
-            'action' => 'deleteAddress'
-        ]
-    ];
+    private $routes;
+
+    public function __construct(array $routes)
+    {
+        $this->routes = $routes;
+    }
 
     public function handleRoute($method, $url)
     {
         var_dump($url);
         var_dump($method);
-        var_dump(self::ROUTES);
+        var_dump($this->routes);
     }
 }
