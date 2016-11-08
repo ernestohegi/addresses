@@ -1,6 +1,6 @@
 <?php
 
-namespace Addresses\Services;
+namespace framework\Services;
 
 interface FormatterServiceInterface
 {

@@ -1,14 +1,26 @@
 <?php
 
 define('BASE_PATH', realpath(dirname(__FILE__)));
-define('BASE_FOLDER', '/src/');
 define('PHP_EXTENSION', '.php');
 
 function autoloader($class)
 {
-    $filename = BASE_PATH . BASE_FOLDER . str_replace('\\', '/', $class) . PHP_EXTENSION;
+    $directories = [
+        'src',
+        'framework',
+        'app'
+    ];
 
-    require_once($filename);
+    foreach ($directories as $directory) {
+        $filePath = $directory . '/' . str_replace('\\', '/', $class) . PHP_EXTENSION;
+
+        var_dump($filePath);
+
+        if(file_exists($filePath))
+        {
+            require_once($filePath);
+        }
+    }
 }
 
 spl_autoload_register('autoloader');

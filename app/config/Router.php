@@ -2,7 +2,7 @@
 
 namespace Addresses\Services;
 
-class RouterService
+class Router
 {
     const INVALID_URL_MESSAGE = '404 Invalid URL';
 
