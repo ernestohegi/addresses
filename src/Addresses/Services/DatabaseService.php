@@ -2,14 +2,24 @@
 
 namespace Addresses\Services;
 
-class Database implements DatabaseInterface
+use PDO;
+
+class DatabaseService implements DatabaseServiceInterface
 {
-    private $connection;
+    private static $connection;
 
     public function __construct($host, $database, $user, $password)
     {
-        if ($this->connection === null) {
-            // Connect
+        if (self::$connection === null) {
+            try {
+                self::$connection = new PDO(
+                    "mysql:host=$host;dbname=$database",
+                    $user,
+                    $password
+                );
+            } catch (PDOException $e) {
+                die($e->getMessage());
+            }
         }
     }
 
@@ -18,7 +28,6 @@ class Database implements DatabaseInterface
      */
     public function select(array $fields)
     {
-
     }
 
     /**
@@ -34,7 +43,6 @@ class Database implements DatabaseInterface
      */
     public function update($id)
     {
-
     }
 
     /**
@@ -42,6 +50,5 @@ class Database implements DatabaseInterface
      */
     public function delete($id)
     {
-
     }
 }

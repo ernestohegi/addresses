@@ -2,7 +2,10 @@
 
 namespace Addresses\Services;
 
-interface DatabaseInterface
+/**
+ * Handles databse interactions.
+ */
+interface DatabaseServiceInterface
 {
     /**
      * @param array $fields
