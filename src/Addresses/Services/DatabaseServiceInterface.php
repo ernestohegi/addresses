@@ -13,7 +13,8 @@ interface DatabaseServiceInterface
     public function select(array $fields);
 
     /**
-     * @return array
+     * @param array $data [field => value, ...]
+     * @return int inserted row id
      */
     public function create(array $data);
 
@@ -21,7 +22,8 @@ interface DatabaseServiceInterface
      * @param string $name
      * @param string $code
      * @param string $address
-     * @return array
+     *
+     * @return int inserted row id
      */
     public function update($id);
 

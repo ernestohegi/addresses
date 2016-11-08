@@ -38,6 +38,6 @@ class DatabaseServiceTest extends TestCase
         ];
 
         $this->database->setTable('addresses');
-        $this->database->create($fields, []);
+        var_dump($this->database->create($fields));
     }
 }

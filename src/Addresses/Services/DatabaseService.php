@@ -46,6 +46,7 @@ class DatabaseService implements DatabaseServiceInterface
      */
     public function create(array $data)
     {
+        $insertId = 0;
         $sql = 'INSERT INTO ' . $this->table . ' SET ';
         $params = [];
 
@@ -60,9 +61,12 @@ class DatabaseService implements DatabaseServiceInterface
 
         try {
             $handle->execute($params);
+            $insertId = $handle->lastInsertId();
         } catch (Exception $e) {
             var_dump($e);
         }
+
+        return $insertId;
     }
 
     /**
