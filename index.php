@@ -1,5 +1,8 @@
 <?php
 
-$requestURL = $_SERVER['REQUEST_URI'];
+require 'autoloader.php';
 
-var_dump($requestURL);
+use Addresses\Services\RouterService;
+
+$router = new RouterService();
+$router->handleRoute($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);
