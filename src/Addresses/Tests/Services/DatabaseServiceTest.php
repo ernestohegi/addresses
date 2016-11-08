@@ -38,6 +38,7 @@ class DatabaseServiceTest extends TestCase
         ];
 
         $this->database->setTable('addresses');
-        var_dump($this->database->create($fields));
+
+        $this->assertTrue($this->database->create($fields) > 0);
     }
 }
