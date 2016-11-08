@@ -71,13 +71,16 @@ class PdoDatabaseService implements DatabaseServiceInterface
     {
         $sql = 'INSERT INTO ' . $this->table . ' SET ';
         $params = [];
+        $placeholderKey = '';
+        $insertSeparator = ', ';
 
         foreach ($data as $key => $value) {
-            $sql .= $key . ' = :' . $key . ', ';
-            $params[':' . $key] = $value;
+            $placeholderKey = ':' . $key;
+            $sql .= $key . ' = ' . $placeholderKey . $insertSeparator;
+            $params[$placeholderKey] = $value;
         }
 
-        $sql = substr($sql, 0, -2);
+        $sql = substr($sql, 0, strlen($insertSeparator));
 
         return [
             'query' => $sql,
