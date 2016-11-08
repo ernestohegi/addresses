@@ -9,6 +9,10 @@ interface DatabaseServiceInterface
 {
     /**
      * @param array $fields
+     * @param int $id
+     * @param string namespace $entity
+     * @return namespace $entiy
+     *
      */
     public function selectWithEntity(array $fields, $id, $entity);
 

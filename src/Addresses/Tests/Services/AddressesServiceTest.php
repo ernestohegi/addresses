@@ -6,9 +6,10 @@ use PHPUnit\Framework\TestCase;
 
 use Addresses\Entities\AddressEntity as Address;
 use Addresses\Repositories\AddressesRepository;
+use Addresses\Services\AddressesService;
 use Addresses\Services\PdoDatabaseService;
 
-class AddressesRepositoryTest extends TestCase
+class AddressesServiceTest extends TestCase
 {
     const DATABASE_HOST = '127.0.0.1';
     const DATTABASE_NAME = 'addresses_test';
@@ -32,6 +33,10 @@ class AddressesRepositoryTest extends TestCase
             'addresses',
             'Addresses\Entities\AddressEntity'
         );
+
+        $this->addressService = new AddressesService(
+            $this->addressRepository
+        );
     }
 
     public function testGetAndCreateAddress() {
@@ -39,7 +44,7 @@ class AddressesRepositoryTest extends TestCase
         $addressTelephone = uniqid();
         $addressAddress = uniqid();
 
-        $addressId = $this->addressRepository->createAddress(
+        $addressId = $this->addressService->createAddress(
             $addressName,
             $addressTelephone,
             $addressAddress
@@ -47,7 +52,7 @@ class AddressesRepositoryTest extends TestCase
 
         $this->assertTrue($addressId > 0);
 
-        $address = $this->addressRepository->getAddress($addressId);
+        $address = $this->addressService->getAddress($addressId);
 
         $this->assertEquals($addressId, $address->getId());
         $this->assertEquals($addressName, $address->getName());

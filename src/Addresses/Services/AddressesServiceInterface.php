@@ -1,8 +1,8 @@
 <?php
 
-namespace Addresses\Repositories;
+namespace Addresses\Services;
 
-interface AddressesRepositoryInterface
+interface AddressesServiceInterface
 {
     /**
      * @param int $id
