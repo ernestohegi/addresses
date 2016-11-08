@@ -1,6 +1,6 @@
 <?php
 
-require 'autoloader.php';
+require './autoloader.php';
 
 use Addresses\Services\RouterService;
 

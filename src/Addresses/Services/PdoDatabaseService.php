@@ -2,7 +2,7 @@
 
 namespace Addresses\Services;
 
-require realpath(dirname(__FILE__)) . '/../../../autoloader.php';
+require_once './autoloader.php';
 
 use PDO;
 
