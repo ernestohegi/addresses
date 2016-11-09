@@ -1,8 +1,8 @@
 <?php
 
-namespace Addresses\Services;
+namespace app;
 
-class RouterService
+class Router
 {
     const INVALID_URL_MESSAGE = '404 Invalid URL';
 
@@ -28,9 +28,9 @@ class RouterService
 
     private function callController($route)
     {
-        $namespacedController = "Addresses\Controllers\\" . $route['controller'];
+        $namespacedController = "src\Addresses\Controllers\\" . $route['controller'];
         $controller = new $namespacedController();
-        $controller->$route['action'](1);
+        $controller->$route['action']();
     }
 
     private function checkRouteExists($method, $urlElements)

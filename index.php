@@ -2,7 +2,7 @@
 
 require './autoloader.php';
 
-use Addresses\Services\RouterService;
+use app\Router;
 
 $routes = [
     'GET address' => [
@@ -23,5 +23,5 @@ $routes = [
     ]
 ];
 
-$router = new RouterService($routes);
+$router = new Router($routes);
 $router->handleRoute($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);

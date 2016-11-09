@@ -1,8 +1,8 @@
 <?php
 
-namespace Addresses\Controllers;
+namespace src\Addresses\Controllers;
 
-use Addresses\Services\AddressesServiceInterface;
+use src\Addresses\Services\AddressesServiceInterface;
 
 class AddressController
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Addresses\Services;
+namespace src\Addresses\Services;
 
 require_once './autoloader.php';
 

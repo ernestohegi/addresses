@@ -1,8 +1,8 @@
 <?php
 
-namespace Addresses\Services;
+namespace src\Addresses\Services;
 
-use Addresses\Repositories\AddressesRepositoryInterface;
+use src\Addresses\Repositories\AddressesRepositoryInterface;
 
 class AddressesService implements AddressesServiceInterface
 {

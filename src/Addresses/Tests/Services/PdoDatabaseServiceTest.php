@@ -3,8 +3,8 @@
 require './vendor/autoload.php';
 
 use PHPUnit\Framework\TestCase;
-use Addresses\Entities\AddressEntity as Address;
-use Addresses\Services\PdoDatabaseService;
+use src\Addresses\Entities\AddressEntity as Address;
+use src\Addresses\Services\PdoDatabaseService;
 
 class PdoDatabaseServiceTest extends TestCase
 {

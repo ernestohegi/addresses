@@ -1,6 +1,6 @@
 <?php
 
-namespace Addresses\Repositories;
+namespace src\Addresses\Repositories;
 
 interface AddressesRepositoryInterface
 {

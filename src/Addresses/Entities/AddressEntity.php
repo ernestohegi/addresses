@@ -1,6 +1,6 @@
 <?php
 
-namespace Addresses\Entities;
+namespace src\Addresses\Entities;
 
 class AddressEntity
 {
