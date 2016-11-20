@@ -8,53 +8,64 @@ class AddressController
 {
     private $addressesService;
 
-    private $formatterService;
+    private $responseService;
 
     public function __construct(
         AddressesServiceInterface $addressesService,
-        FormatterServiceInterface $formatterService
+        ResponseServiceInterface $responseService
     ) {
         $this->addressesService = $addressesService;
-        $this->formatterService = $formatterService;
+        $this->responseService = $responseService;
     }
 
     /**
-     * {@inheritdoc}
+     * @method get
+     * @param int $id address id
+     * @param string $format response format
      */
-    public function getAddress($id)
+    public function getAddress($id, $format)
     {
-        return $this->formatterService(
-            $this->$addressesService->getAddress($id)
+        return $this->responseService->sendResponse(
+            $this->$addressesService->getAddress($id),
+            $format
         );
     }
 
     /**
-     * {@inheritdoc}
+     * @method post
+     * @param string $format response format
      */
-    public function createAddress()
+    public function createAddress($format)
     {
-        return $this->formatterService(
-            $this->$addressesService->createAddress()
+        return $this->responseService->sendResponse(
+            $this->$addressesService->createAddress(),
+            $format
         );
     }
 
     /**
-     * {@inheritdoc}
+     * @method put
+     * @param int $id address id
+     * @param string $format response format
      */
-    public function updateAddress()
+    public function updateAddress($id, $format)
     {
-        return $this->formatterService(
-            $this->$addressesService->updateAddress()
+        return $this->responseService->sendResponse(
+            $this->$addressesService->updateAddress($id),
+            $format
         );
     }
 
     /**
-     * {@inheritdoc}
+     * @method delete
+     * @param int $id address id
+     * @param string $format response format
      */
-    public function deleteAddress($id)
+    public function deleteAddress($id, $format)
     {
-        return $this->formatterService(
-            $this->$addressesService->deleteAddress()
+        return $this->responseService->sendResponse(
+            $this->$addressesService->deleteAddress($id),
+            $format
         );
     }
 }

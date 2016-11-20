@@ -1,6 +1,6 @@
 <?php
 
-namespace src\Addresses\Services;
+namespace Addresses\Services;
 
 class JsonFormatterService implements FormatterServiceInterface
 {
