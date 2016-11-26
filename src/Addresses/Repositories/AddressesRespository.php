@@ -4,7 +4,7 @@ namespace src\Addresses\Repositories;
 
 use src\Addresses\Services\DatabaseServiceInterface;
 
-class AddressesRepository implements AddressesRepositoryInterface
+class AddressesRespository implements AddressesRepositoryInterface
 {
     private $database;
 
@@ -41,7 +41,6 @@ class AddressesRepository implements AddressesRepositoryInterface
      */
     public function getAddresseses()
     {
-
     }
 
     /**
@@ -52,7 +51,7 @@ class AddressesRepository implements AddressesRepositoryInterface
         return $this->database->create([
             'name' => $name,
             'telephone' => $telephone,
-            'address' => $address
+            'address' => $address,
         ]);
     }
 
@@ -61,6 +60,5 @@ class AddressesRepository implements AddressesRepositoryInterface
      */
     public function deleteAddress($id)
     {
-
     }
 }

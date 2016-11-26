@@ -20,7 +20,8 @@ class AddressController
 
     /**
      * @method get
-     * @param int $id address id
+     *
+     * @param int    $id     address id
      * @param string $format response format
      */
     public function getAddress($id, $format)
@@ -33,6 +34,7 @@ class AddressController
 
     /**
      * @method post
+     *
      * @param string $format response format
      */
     public function createAddress($format)
@@ -45,7 +47,8 @@ class AddressController
 
     /**
      * @method put
-     * @param int $id address id
+     *
+     * @param int    $id     address id
      * @param string $format response format
      */
     public function updateAddress($id, $format)
@@ -58,7 +61,8 @@ class AddressController
 
     /**
      * @method delete
-     * @param int $id address id
+     *
+     * @param int    $id     address id
      * @param string $format response format
      */
     public function deleteAddress($id, $format)

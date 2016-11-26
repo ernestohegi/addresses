@@ -8,16 +8,17 @@ namespace src\Addresses\Services;
 interface DatabaseServiceInterface
 {
     /**
-     * @param array $fields
-     * @param int $id
+     * @param array            $fields
+     * @param int              $id
      * @param string namespace $entity
-     * @return namespace $entiy
      *
+     * @return namespace $entiy
      */
     public function selectWithEntity(array $fields, $id, $entity);
 
     /**
      * @param array $data [field => value, ...]
+     *
      * @return int inserted row id
      */
     public function create(array $data);
@@ -33,6 +34,7 @@ interface DatabaseServiceInterface
 
     /**
      * @param int $id
+     *
      * @return bool
      */
     public function delete($id);

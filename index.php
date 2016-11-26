@@ -7,20 +7,20 @@ use app\Router;
 $routes = [
     'GET address' => [
         'controller' => 'AddressController',
-        'action' => 'getAddress'
+        'action' => 'getAddress',
     ],
     'POST address' => [
         'controller' => 'AddressController',
-        'action' => 'createAddress'
+        'action' => 'createAddress',
     ],
     'PUT address' => [
         'controller' => 'AddressController',
-        'action' => 'updateAddress'
+        'action' => 'updateAddress',
     ],
     'DELETE address' => [
         'controller' => 'AddressController',
-        'action' => 'deleteAddress'
-    ]
+        'action' => 'deleteAddress',
+    ],
 ];
 
 $router = new Router($routes);

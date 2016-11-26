@@ -35,7 +35,7 @@ class PdoDatabaseServiceTest extends TestCase
         $fields = [
             'name' => 'Tester 1',
             'telephone' => '123123',
-            'address' => 'Fake 123'
+            'address' => 'Fake 123',
         ];
 
         $this->database->setTable('addresses');

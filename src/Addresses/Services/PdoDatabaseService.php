@@ -40,8 +40,9 @@ class PdoDatabaseService implements DatabaseServiceInterface
      */
     public function selectWithEntity(array $fields, $id, $entity)
     {
-        $handler = self::$connection->query('SELECT ' . implode(',', $fields) . ' from ' . $this->table . ' where id = ' . $id);
+        $handler = self::$connection->query('SELECT '.implode(',', $fields).' from '.$this->table.' where id = '.$id);
         $handler->setFetchMode(PDO::FETCH_CLASS, $entity);
+
         return $handler->fetch();
     }
 
@@ -69,14 +70,14 @@ class PdoDatabaseService implements DatabaseServiceInterface
 
     private function getInsertQueryData(array $data)
     {
-        $sql = 'INSERT INTO ' . $this->table . ' SET ';
+        $sql = 'INSERT INTO '.$this->table.' SET ';
         $params = [];
         $placeholderKey = '';
         $insertSeparator = ', ';
 
         foreach ($data as $key => $value) {
-            $placeholderKey = ':' . $key;
-            $sql .= $key . ' = ' . $placeholderKey . $insertSeparator;
+            $placeholderKey = ':'.$key;
+            $sql .= $key.' = '.$placeholderKey.$insertSeparator;
             $params[$placeholderKey] = $value;
         }
 
@@ -84,7 +85,7 @@ class PdoDatabaseService implements DatabaseServiceInterface
 
         return [
             'query' => $sql,
-            'params' => $params
+            'params' => $params,
         ];
     }
 

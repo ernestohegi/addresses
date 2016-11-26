@@ -14,12 +14,12 @@ class JsonFormatterServiceTest extends TestCase
         $this->jsonFormatterService = new JsonFormatterService();
     }
 
-    public function testEncoder() {
+    public function testEncoder()
+    {
         var_dump($this->jsonFormatterService->encode(['hello']));
     }
 
-    public function testDecoder() {
-
+    public function testDecoder()
+    {
     }
-
 }

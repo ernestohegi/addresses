@@ -16,7 +16,8 @@ class FormatterService
         $this->xmlFormatter = $xmlFormatter;
     }
 
-    public function getFormatter($format) {
+    public function getFormatter($format)
+    {
         $formatter = new stdClass();
 
         switch ($format) {

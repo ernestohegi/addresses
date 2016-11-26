@@ -27,7 +27,6 @@ class AddressesService implements AddressesServiceInterface
      */
     public function getAddresseses()
     {
-
     }
 
     /**
@@ -47,6 +46,5 @@ class AddressesService implements AddressesServiceInterface
      */
     public function deleteAddress($id)
     {
-
     }
 }

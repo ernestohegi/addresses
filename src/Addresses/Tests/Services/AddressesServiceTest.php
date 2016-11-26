@@ -3,8 +3,6 @@
 require './vendor/autoload.php';
 
 use PHPUnit\Framework\TestCase;
-
-use src\Addresses\Entities\AddressEntity as Address;
 use src\Addresses\Repositories\AddressesRepository;
 use src\Addresses\Services\AddressesService;
 use src\Addresses\Services\PdoDatabaseService;
@@ -39,8 +37,9 @@ class AddressesServiceTest extends TestCase
         );
     }
 
-    public function testGetAndCreateAddress() {
-        $addressName = 'Tester' . uniqid();
+    public function testGetAndCreateAddress()
+    {
+        $addressName = 'Tester'.uniqid();
         $addressTelephone = uniqid();
         $addressAddress = uniqid();
 
@@ -59,5 +58,4 @@ class AddressesServiceTest extends TestCase
         $this->assertEquals($addressTelephone, $address->getTelephone());
         $this->assertEquals($addressAddress, $address->getAddress());
     }
-
 }
